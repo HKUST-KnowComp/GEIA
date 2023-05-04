@@ -259,30 +259,7 @@ def train_on_batch(batch_X,batch_D,model,tokenizer,criterion,device,train=True):
 
 
 
-def get_qnli_data(data_type):
-    dataset = load_dataset('glue','qnli', cache_dir="/home/hlibt/embed_rev/data", split=data_type)
-    sentence_list = []
-    for i,d in enumerate(dataset):
-        sentence_list.append(d['question'])
-        sentence_list.append(d['sentence'])
-    return sentence_list
-def get_personachat_data(data_type):
 
-    sent_list = get_persona_dict(data_type=data_type)
-    return sent_list
-
-# def get_sent_list(config):
-#     dataset = config['dataset']
-#     data_type = config['data_type']
-#     if dataset == 'personachat':
-#         sent_list = get_personachat_data(data_type)
-#         return sent_list
-#     elif dataset == 'qnli':
-#         sent_list = get_qnli_data(data_type)
-#         return sent_list
-#     else:
-#         print('Name of dataset only supports: personachat or qnli')
-#         sys.exit(-1)
 
 if __name__ == '__main__':
     model_cards ={}
