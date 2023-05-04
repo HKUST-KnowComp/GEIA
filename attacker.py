@@ -295,6 +295,7 @@ if __name__ == '__main__':
     config['device'] = torch.device("cuda")
     config['tokenizer'] = AutoTokenizer.from_pretrained('microsoft/DialoGPT-large')
     config['eos_token'] = config['tokenizer'].eos_token
+    config['use_opt'] = False
 
     
     device = torch.device("cuda:0")
