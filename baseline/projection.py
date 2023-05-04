@@ -499,6 +499,7 @@ if __name__ == '__main__':
                         help='Name of embedding model: mpnet/sent_roberta/simcse_bert/simcse_roberta/sent_t5')
     # parser.add_argument('--embed_model', type=str, default='simcse_roberta', help='Name of embedding model: mpnet/sent_roberta/simcse_bert/simcse_roberta/sent_t5')
     parser.add_argument('--model_type', type=str, default='NN', help='Type of baseline model: RNN or NN')
+    parser.add_argument('--eval', type=str, default=False, help='True or False')
     
     args = parser.parse_args()
     config = {}
@@ -509,7 +510,8 @@ if __name__ == '__main__':
     config['data_type'] = args.data_type
     config['embed_model'] = args.embed_model
     config['model_type'] = args.model_type
-
+    config['eval'] = args.eval
+    
     config['device'] = torch.device("cuda")
     config['tokenizer'] = AutoTokenizer.from_pretrained('microsoft/DialoGPT-medium')
     config['eos_token'] = config['tokenizer'].eos_token
@@ -523,7 +525,5 @@ if __name__ == '__main__':
                             batch_size=config['batch_size'],
                             collate_fn=dataset.collate,
                             drop_last=True)
-    print("start training")
-    get_embedding(dataloader, config, eval=False)
-    print("start evaluation")
-    get_embedding(dataloader, config, eval=True)
+    
+    get_embedding(dataloader, config, eval=config['eval'])
