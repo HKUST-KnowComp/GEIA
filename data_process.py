@@ -50,7 +50,7 @@ def get_personachat_data(data_type):
 def get_qnli_data(data_type):
     if(data_type == 'dev'):
         data_type = 'validation'
-    dataset = load_dataset('glue', 'qnli', cache_dir="/home/hlibt/embed_rev/data", split=data_type)
+    dataset = load_dataset('glue', 'qnli', cache_dir="data/", split=data_type)
     sentence_list = []
     for i, d in enumerate(dataset):
         sentence_list.append(d['question'])
@@ -62,7 +62,7 @@ def get_mnli_data(data_type):
         data_type = 'test_matched'
     if(data_type == 'dev'):
         data_type = 'validation_matched'
-    dataset = load_dataset('glue', 'mnli', cache_dir="/home/hlibt/embed_rev/data", split=data_type)
+    dataset = load_dataset('glue', 'mnli', cache_dir="data/", split=data_type)
     sentence_list = []
     for i, d in enumerate(dataset):
         sentence_list.append(d['premise'])
@@ -72,7 +72,7 @@ def get_mnli_data(data_type):
 def get_sst2_data(data_type):
     if(data_type == 'dev'):
         data_type = 'validation'
-    dataset = load_dataset('glue', 'sst2', cache_dir="/home/hlibt/embed_rev/data", split=data_type)
+    dataset = load_dataset('glue', 'sst2', cache_dir="data/", split=data_type)
     sentence_list = []
     for i, d in enumerate(dataset):
         sentence_list.append(d['sentence'])
@@ -82,7 +82,7 @@ def get_sst2_data(data_type):
 def get_wmt16_data(data_type):
     if(data_type == 'dev'):
         data_type = 'validation'
-    dataset = load_dataset('wmt16', 'cs-en', cache_dir="/home/hlibt/embed_rev/data", split=data_type)
+    dataset = load_dataset('wmt16', 'cs-en', cache_dir="data/", split=data_type)
     sentence_list = []
     for i, d in enumerate(dataset):
 
@@ -95,7 +95,7 @@ def get_wmt16_data(data_type):
 def get_multi_woz_data(data_type):
     if(data_type == 'dev'):
         data_type = 'validation'
-    dataset = load_dataset('multi_woz_v22', 'v2.2', cache_dir="/home/hlibt/embed_rev/data", split=data_type)
+    dataset = load_dataset('multi_woz_v22', 'v2.2', cache_dir="data/", split=data_type)
     sentence_list = []
     for i, d in enumerate(dataset):
         s = d['turns']['utterance']
