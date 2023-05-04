@@ -20,6 +20,8 @@ For other datasets, we use ```datasets``` package to download and store them, so
 
 
 ### GIEA
+
+#### GPT-2 Attacker
 **You need to set up arguments properly before running codes**:
 ```python attacker.py```
 
@@ -36,8 +38,14 @@ You should train the attacker on training data at first, then test your attacker
 If you want to train a randomly initialized GPT-2 attacker, after setting the arguments, run:
 ```python attacker_random_gpt2.py```
 
+#### Other Attackers
+Due to the fact that different decoders have different implementaions, we use separate py files for each model (the decoding implementations also differ). 
+
 If you want to try out opt as the attacker model, run:
-````python attacker_opt.py```
+```python attacker_opt.py```
+
+If you want to try out t5 as the attacker model, run:
+```python attacker_t5.py```
 
 ### Evaluation
 **You need to make sure the test reuslt paths is set inside the 'eval_xxx.py' files.**
