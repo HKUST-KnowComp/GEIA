@@ -24,7 +24,7 @@ from datasets import load_dataset
 from data_process import get_sent_list
 
 #abcd_path = config.abcd_path
-model_folder_path = 'models_arr_feb/'
+model_folder_path = 'models/'
 
 class linear_projection(nn.Module):
     def __init__(self, in_num, out_num=1024):
