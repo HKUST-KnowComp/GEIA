@@ -23,7 +23,7 @@ For other datasets, we use ```datasets``` package to download and store them, so
 **You need to set up arguments properly before running codes**:
 ```python attacker.py```
 
-* --model_dir: Attacker model path from Huggingface or local model checkpoints.
+* --model_dir: Attacker model path from Huggingface (like 'gpt2-large' and 'microsoft/DialoGPT-xxxx') or local model checkpoints.
 * --num_epochs: Training epoches.
 * --batch_size: Batch_size #.
 * --dataset: Name of the dataset including personachat, qnli, mnli, sst2, wmt16, multi_woz and abcd.
