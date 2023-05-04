@@ -17,16 +17,8 @@ stopwords_list = stopwords.words('english')
 for w in ['!',',','.','?','-s','-ly','</s>','s']:
     stopwords_list.append(w)
 stopwords_set  = set(stopwords_list)
-file_list = ['All_test_results/NN_wmt16_simcse_bert_threshold_0.70.label',
-'All_test_results/NN_sst2_simcse_bert_threshold_0.75.label',
-'All_test_results/NN_multi_woz_simcse_bert_threshold_0.50.label',
-'All_test_results/NN_mnli_simcse_bert_threshold_0.50.label',
-'All_test_results/NN_abcd_simcse_bert_threshold_0.45.label',
-'All_test_results/test_RNN_wmt16_simcse_bert.label',
-'All_test_results/test_RNN_sst2_simcse_bert.label',
-'All_test_results/test_RNN_multi_woz_simcse_bert.label',
-'All_test_results/test_RNN_mnli_simcse_bert.label',
-'All_test_results/test_RNN_abcd_simcse_bert.label']
+# for NN or RNN result
+file_list = ['path to NN OR RNN result']
 
 
 for file in file_list:
@@ -75,11 +67,8 @@ for file in file_list:
         print(swr_pred)
 
 
-file_list = ['All_test_results/attacker_gpt2_wmt16_simcse_bert_beam.log',
-'All_test_results/attacker_gpt2_multi_woz_simcse_bert_beam.log',
-'All_test_results/attacker_gpt2_abcd_simcse_bert_beam.log',
-'All_test_results/attacker_gpt2_sst2_simcse_bert_beam.log',
-'All_test_results/attacker_gpt2_mnli_simcse_bert_beam.log']
+# for GPT result
+file_list = ['path to GPT result']
 
 for file in file_list:
     gt_count = 0
