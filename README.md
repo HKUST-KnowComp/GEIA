@@ -25,6 +25,7 @@ For other datasets, we use ```datasets``` package to download and store them, so
 * --data_type: Train or test.
 * --embed_model: The victim model you wish to attack. We currently support sentence-bert models and huggingface models, you may refer to our model_cards dictionary in ```projection.py``` for more information.
 * --model_type: NN or RNN
+
 By running:
 ```python projection.py```
 You will train your own baseline model and evaluate it. If you want to just train or eval a certain model, check the last four lines of ```projection.py``` and disable the corresponding codes.
