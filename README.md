@@ -15,9 +15,19 @@ The ABCD dataset we experimented can be found in https://drive.google.com/file/d
 For other datasets, we use ```datasets``` package to download and store them, so you can run our code directly.
 
 ### Baseline Attackers
+**You need to set up arguments properly before running codes**:
+```python projection.py```
 
-
-
+* --model_dir: Attacker model path from Huggingface (like 'gpt2-large' and 'microsoft/DialoGPT-xxxx') or local model checkpoints.
+* --num_epochs: Training epoches.
+* --batch_size: Batch_size #.
+* --dataset: Name of the dataset including personachat, qnli, mnli, sst2, wmt16, multi_woz and abcd.
+* --data_type: Train or test.
+* --embed_model: The victim model you wish to attack. We currently support sentence-bert models and huggingface models, you may refer to our model_cards dictionary in ```projection.py``` for more information.
+* --model_type: NN or RNN
+By running:
+```python projection.py```
+You will train your own baseline model and evaluate it. If you want to just train or eval a certain model, check the last four lines of ```projection.py``` and disable the corresponding codes.
 
 ### GIEA
 
