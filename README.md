@@ -40,7 +40,7 @@ You will train your own baseline model and evaluate it. If you want to just trai
 * --num_epochs: Training epoches.
 * --batch_size: Batch_size #.
 * --dataset: Name of the dataset including personachat, qnli, mnli, sst2, wmt16, multi_woz and abcd.
-* --data_type: Train or test.
+* --data_type: train or dev or test.
 * --embed_model: The victim model you wish to attack. We currently support sentence-bert models and huggingface models, you may refer to our model_cards dictionary in ```attacker.py``` for more information.
 * --decode: Decoding algorithm. We currently implement beam and sampling based decoding.
 
