@@ -4,10 +4,8 @@ print("start")
 nlp = stanza.Pipeline(lang='en', processors='tokenize,ner')
 
 print("start_2")
-file_list = [
-'All_test_results/attacker_gpt2_sst2_simcse_bert_beam.log',
-'All_test_results/attacker_gpt2_mnli_simcse_bert_beam.log'
-             ]
+# for gpt result
+file_list = ['path to gpt result']
              
 
 for file in file_list:
@@ -74,13 +72,8 @@ for file in file_list:
         print("ner")
         print(ner)
 
-file_list = [
-'/home/hlibt/embed_rev/personachat/processed_persona/train.txt',
-'/home/hlibt/embed_rev/personachat/processed_persona/dev.txt',
-'/home/hlibt/embed_rev/personachat/processed_persona/test.txt',            
-'/home/hlibt/embed_rev/data/downloads/extracted/00f5f432dc97706f62c0a6debce05c1f96888b89788d3ccc6d9dcc581bec6101/QNLI/test.tsv'
-'/home/hlibt/embed_rev/data/downloads/extracted/00f5f432dc97706f62c0a6debce05c1f96888b89788d3ccc6d9dcc581bec6101/QNLI/dev.tsv'
-'/home/hlibt/embed_rev/data/downloads/extracted/00f5f432dc97706f62c0a6debce05c1f96888b89788d3ccc6d9dcc581bec6101/QNLI/train.tsv']
+# for persona_data result
+file_list = ['path to persona_data result']
              
 
 for file in file_list:
@@ -115,12 +108,10 @@ for file in file_list:
     print("total_entity")
     print(total_entity)
 
-file_list = ['All_test_results/test_RNN_wmt16_simcse_bert.label',
-'All_test_results/test_RNN_sst2_simcse_bert.label',
-'All_test_results/test_RNN_multi_woz_simcse_bert.label',
-'All_test_results/test_RNN_mnli_simcse_bert.label',
-'All_test_results/test_RNN_abcd_simcse_bert.label']
-print("start rnn")
+
+# for RNN result
+file_list = ['path to RNN result']
+
 for file in file_list:
     with open(file) as f:
         print(file)
@@ -175,11 +166,9 @@ for file in file_list:
 
         
 
-file_list = ['All_test_results/NN_wmt16_simcse_bert_threshold_0.70.label',
-'All_test_results/NN_sst2_simcse_bert_threshold_0.75.label',
-'All_test_results/NN_multi_woz_simcse_bert_threshold_0.50.label',
-'All_test_results/NN_mnli_simcse_bert_threshold_0.50.label',
-'All_test_results/NN_abcd_simcse_bert_threshold_0.45.label']
+
+# for NN result
+file_list = ['path to NN result']
 for file in file_list:
     with open(file) as f:
         print(file)
