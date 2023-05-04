@@ -36,6 +36,8 @@ You should train the attacker on training data at first, then test your attacker
 If you want to train a randomly initialized GPT-2 attacker, after setting the arguments, run:
 ```python attacker_random_gpt2.py```
 
+If you want to try out opt as the attacker model, run:
+````python attacker_opt.py```
 
 ### Evaluation
 **You need to make sure the test reuslt paths is set inside the 'eval_xxx.py' files.**
