@@ -515,7 +515,6 @@ if __name__ == '__main__':
     config['eos_token'] = config['tokenizer'].eos_token
     config['tokenizer'].pad_token = config['eos_token']
     sent_list = get_sent_list(config)
-    #tokens, onehot_labels = process_sent_list(sent_list, config)
 
     #dataset = sent_list_dataset(sent_list, onehot_labels)
     dataset = collated_dataset(sent_list,config)
