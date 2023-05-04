@@ -30,3 +30,24 @@ For other datasets, we use ```datasets``` package to download and store them, so
 * --data_type: Train or test.
 * --embed_model: The victim model you wish to attack. We currently support sentence-bert models and huggingface models, you may refer to our model_cards dictionary in ```attacker.py``` for more information.
 * --decode: Decoding algorithm. We currently implement beam and sampling based decoding.
+
+If you want to train a randomly initialized GPT-2 attacker, after setting the arguments, run:
+```python attacker_random_gpt2.py```
+
+
+### Evaluation
+**You need to make sure the test reuslt paths is set inside the 'eval_xxx.py' files.**
+
+To obtain classification performance, run:
+```python eval_classification.py```
+
+To obtain generation performance, run:
+```python eval_generation.py```
+
+To calculate perplexity, you need to set the LM to caluate PPL, run:
+```python eval_ppl.py```
+
+
+### Miscellaneous
+
+Please send any questions about the code and/or the algorithm to hlibt@connect.ust.hk
