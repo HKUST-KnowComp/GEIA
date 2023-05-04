@@ -70,8 +70,6 @@ class baseline_RNN(nn.Module):
     def get_token_embedding(self, token_id):
         token = self.gpt2_tokenizer.decode(token_id)
         embedding = self.pipe(token)  # get embedding, [1,1,1024]
-        # print("embedding")
-        # print(embedding)
         embedding = torch.tensor(embedding).cuda()
         embedding = embedding[0, 0, :]
         return embedding
