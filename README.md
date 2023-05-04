@@ -31,6 +31,8 @@ For other datasets, we use ```datasets``` package to download and store them, so
 * --embed_model: The victim model you wish to attack. We currently support sentence-bert models and huggingface models, you may refer to our model_cards dictionary in ```attacker.py``` for more information.
 * --decode: Decoding algorithm. We currently implement beam and sampling based decoding.
 
+You should train the attacker on training data at first, then test your attacker on the test data to obtain test logs. Then you can evaluate attack performance on test logs.
+
 If you want to train a randomly initialized GPT-2 attacker, after setting the arguments, run:
 ```python attacker_random_gpt2.py```
 
