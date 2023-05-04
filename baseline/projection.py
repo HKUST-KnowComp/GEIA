@@ -118,11 +118,6 @@ class collated_dataset(Dataset):
         #print(dial_tokens_np.shape)
         #print(input_labels.shape)
         return unpacked_data, input_labels
-'''
-convert input text to one-hot labels (multilabel classification)
-return tokenized outputs and one-hot outputs
-'''
-
 
 def process_sent_list(sent_list, config):
     tokenizer = config['tokenizer']
@@ -337,12 +332,6 @@ def eval_sent(dataloader, model_name, embed_model_dim, config):
         ### no grad for embedding model
         with torch.no_grad():
             embeddings = model.encode(batch_text, convert_to_tensor=True)
-            #if type == 'RNN':
-            #    embeddings.unsqueeze_(-1)
-            #    embeddings = embeddings.transpose(1, 2)
-            #    embeddings = embeddings.repeat(1, 20, 1)
-            #    batch_label.unsqueeze_(-1)
-            #    batch_label = batch_label.transpose(1, 2)
             print(f'embeddings:{embeddings.size()}')
             # embeddings:torch.Size([64, 1024])    [batch size, feature(dim)]
             if type == 'NN':
@@ -389,12 +378,6 @@ def eval_simcse(dataloader, model_name, embed_model_dim, config):
             inputs = tokenizer(batch_text, padding=True, truncation=True, return_tensors="pt").to(device)
             # print(f'inputs:{inputs.size()}')
             embeddings = model(**inputs, output_hidden_states=True, return_dict=True).pooler_output
-            '''
-            if type == 'RNN':
-                embeddings.unsqueeze_(-1)
-                embeddings = embeddings.transpose(1, 2)
-                embeddings = embeddings.repeat(1, 20, 1)
-            '''
             print(f'embeddings:{embeddings.size()}')
 
             # batch_pred_labels = eval_on_batch(baseline_model,criterion,embeddings,batch_label)
