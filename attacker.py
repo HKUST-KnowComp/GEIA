@@ -114,9 +114,9 @@ def process_data(data,batch_size,device,config,need_porj=True):
             print(f'Training: epoch {i} batch {idx} with loss: {record_loss} and PPL {perplexity} with size {embeddings.size()}')
             #sys.exit(-1)
         if need_porj:
-            proj_path = 'models_update/' + 'projection_gpt2_large_' + config['dataset'] + '_' + config['embed_model']
+            proj_path = 'models/' + 'projection_gpt2_large_' + config['dataset'] + '_' + config['embed_model']
             torch.save(projection.state_dict(), proj_path)
-        save_path = 'models_update/' + 'attacker_gpt2_large_' + config['dataset'] + '_' + config['embed_model']
+        save_path = 'models/' + 'attacker_gpt2_large_' + config['dataset'] + '_' + config['embed_model']
         model_attacker.save_pretrained(save_path)
 
 
@@ -127,9 +127,9 @@ def process_data_test(data,batch_size,device,config,need_proj=True):
     device_1 = torch.device("cuda:0")
     model = SentenceTransformer(config['embed_model_path'],device=device_1)   # dim 768
     if(config['decode'] == 'beam'):
-        save_path = 'models_update/' + 'attacker_gpt2_large_' + config['dataset'] + '_' + config['embed_model']+'_beam'+'.log'
+        save_path = 'models/' + 'attacker_gpt2_large_' + config['dataset'] + '_' + config['embed_model']+'_beam'+'.log'
     else:
-        save_path = 'models_update/' + 'attacker_gpt2_large_' + config['dataset'] + '_' + config['embed_model']+'.log'
+        save_path = 'models/' + 'attacker_gpt2_large_' + config['dataset'] + '_' + config['embed_model']+'.log'
     dataset = personachat(data)
     # no shuffle for testing data
     dataloader = DataLoader(dataset=dataset, 
@@ -139,7 +139,7 @@ def process_data_test(data,batch_size,device,config,need_proj=True):
 
     print('load data done')
     if need_proj:
-        proj_path = 'models_update/' + 'projection_gpt2_large_' + config['dataset'] + '_' + config['embed_model']
+        proj_path = 'models/' + 'projection_gpt2_large_' + config['dataset'] + '_' + config['embed_model']
         projection = linear_projection(in_num=768, out_num=1280)
         projection.load_state_dict(torch.load(proj_path))
         projection.to(device)
@@ -147,7 +147,7 @@ def process_data_test(data,batch_size,device,config,need_proj=True):
     else:
         print('no projection loaded')
     # setup on config for sentence generation   AutoModelForCausalLM
-    attacker_path = 'models_update/' + 'attacker_gpt2_large_' + config['dataset'] + '_' + config['embed_model']
+    attacker_path = 'models/' + 'attacker_gpt2_large_' + config['dataset'] + '_' + config['embed_model']
     config['model'] = AutoModelForCausalLM.from_pretrained(attacker_path).to(device)
     config['tokenizer'] = AutoTokenizer.from_pretrained('microsoft/DialoGPT-large')
 
