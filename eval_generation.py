@@ -89,7 +89,7 @@ def get_bleu(data):
     refs_list_bleu = [[sentence.split()] for sentence in gt]
     bleu_score = nltk.translate.bleu_score.corpus_bleu(refs_list_bleu, cands_list_bleu) 
     bleu_score_1 = nltk.translate.bleu_score.corpus_bleu(refs_list_bleu, cands_list_bleu,weights=(1, 0, 0, 0)) 
-    bleu_score_2 = nltk.translate.bleu_score.corpus_bleu(refs_list_bleu, cands_list_bleu,weights=(0, 1, 0, 0)) 
+    bleu_score_2 = nltk.translate.bleu_score.corpus_bleu(refs_list_bleu, cands_list_bleu,weights=(0.5, 0.5, 0, 0)) 
     print(f'bleu1 : {bleu_score_1}')
     print(f'bleu2 : {bleu_score_2}')
     print(f'bleu : {bleu_score}')
