@@ -70,7 +70,33 @@ To obtain generation performance, run:
 To calculate perplexity, you need to set the LM to caluate PPL, run:
 ```python eval_ppl.py```
 
+### Citation
+
+Please kindly cite the following paper if you found our method and resources helpful!
+
+```
+@inproceedings{li-etal-2023-sentence,
+    title = "Sentence Embedding Leaks More Information than You Expect: Generative Embedding Inversion Attack to Recover the Whole Sentence",
+    author = "Li, Haoran  and
+      Xu, Mingshi  and
+      Song, Yangqiu",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2023",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.findings-acl.881",
+    doi = "10.18653/v1/2023.findings-acl.881",
+    pages = "14022--14040",
+}
+```
 
 ### Miscellaneous
 
 Please send any questions about the code and/or the algorithm to hlibt@connect.ust.hk
+
+
+
+
+
+
